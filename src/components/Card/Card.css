@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+@font-face {
+    font-family: "FiragoBold";
+    src: url(../../../public/Fonts/FiraGO-Bold.woff);
+}
+
+.cardDiv {
+    width: 384px;
+    height: 455px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.cardImage {
+    background-color: aqua;
+    border-radius: 14px 14px 0px 0px;
+    width: 100%;
+    height: 307px;
+
+}
+
+.offerStatus{
+    height: fit-content;
+    width: 90px;
+    font-family: "FiraGoRegular";
+    font-weight: 500px;
+    font-size: 12px;
+    background-color: #02152680;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top:23px ;
+    margin-left:23px ;
+}
+
+.cardDetailsDiv {
+    height: 148px;
+    width: 100%;
+      
+    border: 1px solid #DBDBDB;
+    border-top: 0px;
+    box-sizing: border-box;
+    border-radius: 0px 0px 14px 14px;
+    align-items: center;
+    display: flex;
+    
+
+}
+
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    margin: 22px 0px 0px 25px;
+}
+
+.cardPrice {
+    font-family: "FiragoBold";
+    font-size: 28px;
+}
+.cardAdress{
+    margin-top: 6px;
+    display: flex;
+}
+.locationSvg{
+    margin-right: 4px;
+}
+
+.cardAdressSpan {
+    font-family: "FiraGoRegular";
+    font-size: 16px;
+    color: #021526B2;
+}
+
+.cardIconDetails {
+    font-family: "FiraGoRegular";
+    color: #021526B2;
+    display: flex;    
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.bedRooms,
+.area,
+.zip {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+.bedRoomsSvg {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.areaIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+
+}
+
+.zipIcon {
+    width: 16px;
+    height: 18px;
+    margin-right: 5px;
+
+}
+
+sup {
+    font-size: 10px;
+    vertical-align: super;
+}

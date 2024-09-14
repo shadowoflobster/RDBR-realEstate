@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+.filterDiv{
+    height: 47px;
+    width: 785px;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.filterButton{
+    background-color: aqua;
+    border: none;
+    font-family: "FiraGoRegular";
+    font-size: 16px;
+    font-weight: 500px;
+    padding: 8px 14px 8px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}

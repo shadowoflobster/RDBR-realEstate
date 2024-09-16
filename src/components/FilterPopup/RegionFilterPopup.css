@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+.regionFilterDiv{
+    background-color: #FFFFFF;
+    width: 731px;
+    height: 284px;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 10px;
+
+}
+
+.regionFilterContent{
+    width: 679px;
+    height: 171px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 0;
+}
+.regionFilterHeader{
+    font-size: 16px;
+    font-weight: 500px;
+    font-family: "FiraGoRegular";
+}
+.regionFilterChecks{
+    width: 100%;
+    height: 128px;
+    margin-top: 24px;
+    display: flex;
+    gap: 50px;
+}
+
+.regionFilterLabel{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "FiraGoRegular";
+    font-weight: 400px;
+    font-size: 14px;
+}
+.regionFilterCheckBox{
+    border: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 2px;
+    border: 1px solid #DBDBDB;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.regionFilterCheckBox:checked {
+    background-color: #45A849; 
+   
+    border: none;
+}
+.regionFilterCheckBox:checked::before {
+    content: url('../SVGs/checked.svg');
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    margin: 0 auto;
+
+}
+.regionFilterChecksRow{
+    width: 191px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setRegionFilterBtnDiv{
+    margin-top: 32px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.setRegionFilterBtn{
+   
+    width: 77px;
+    height: 33px;
+    padding: 8px 14px 8px 14px;
+    background-color: #F93B1D;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    
+}

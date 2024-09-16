@@ -15,7 +15,6 @@
 }
 
 .filterButton{
-    background-color: aqua;
     border: none;
     font-family: "FiraGoRegular";
     font-size: 16px;
@@ -25,4 +24,6 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
+
 }

@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+.AddListingAndAgentDiv{
+    display: flex;
+    gap: 16px;
+}
+.AddListingButton{
+    width: 230px;
+    height: 47px;
+    border: none;
+    border-radius: 10px;  
+    background-color: #F93B1D;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:6.58px;
+    color: white;
+    font-size: 16px;
+    font-family: "FiraGoRegular";
+    font-weight: 500px;
+    cursor: pointer;
+
+}
+.AddAgentButton{
+    width: 230px;
+    height: 47px;
+    border: none;
+    border-radius: 10px;  
+    background-color: white;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #F93B1D;
+    gap:6.58px;
+    color: #F93B1D;
+    font-size: 16px;
+    font-family: "FiraGoRegular";
+    font-weight: 500px;
+    cursor: pointer;
+
+}
+.addListingSvg{
+height: 12.83px;
+width: 12.83px;
+}
+.addAgentSvg{
+    height: 12.83px;
+    width: 12.83px;
+
+    }

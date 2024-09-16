@@ -11,26 +11,24 @@ const Filter = () => {
     area:'',
     bedrooms:''
  });
-
  const handleCheckboxSelect = (filterType, value) => {
-    setSelectedFilters((prevFilters) => {
-      const currentSelections = prevFilters[filterType];
+  setSelectedFilters((prevFilters) => {
+      const currentSelections = prevFilters[filterType] || [];
       const isSelected = currentSelections.includes(value);
       
-      // Add or remove the value from the array
       const updatedSelections = isSelected
-        ? currentSelections.filter(item => item !== value)  // Remove if already selected
-        : [...currentSelections, value];  // Add if not selected
-
+          ? currentSelections.filter(item => item !== value)
+          : [...currentSelections, value];
+      
       return {
-        ...prevFilters,
-        [filterType]: updatedSelections
+          ...prevFilters,
+          [filterType]: updatedSelections
       };
-    });
-  };
+  });
+};
  
  const applyFilter =() => {
-console.log('applyFilter')
+console.log('Applied filters: ', selectedFilters)
  }
  
  
@@ -46,7 +44,7 @@ console.log('applyFilter')
 
 
     return (
-    <>
+    <div>
     <div className="filterDiv">
         <button name="region" className="filterButton" onClick={() => toggleFilter('region')}><span>რეგიონი</span> <img src={dropDownIcon}/></button>
         <button name="price" className="filterButton" onClick={() => toggleFilter('price')}><span>საფასო კატეგორია</span><img src={dropDownIcon}/></button>
@@ -55,9 +53,9 @@ console.log('applyFilter')
         
     </div>
     {activeFilter === 'region' && (
-        <RegionFilterPopup></RegionFilterPopup>
+        <RegionFilterPopup onSelect={handleCheckboxSelect}  selectedRegions={selectedFilters.region} applyFilters={applyFilter}></RegionFilterPopup>
       )}
-    </>)
+    </div>)
 }
 
 

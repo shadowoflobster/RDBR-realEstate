@@ -3,6 +3,8 @@
     src: url(../../../public/Fonts/FiraGO-Regular.woff);
 }
 
+
+
 .filterDiv{
     height: 47px;
     width: 785px;
@@ -17,9 +19,11 @@
 .filterButton{
     border: none;
     font-family: "FiraGoRegular";
+    background-color: white;
     font-size: 16px;
     font-weight: 500px;
     padding: 8px 14px 8px 14px;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;

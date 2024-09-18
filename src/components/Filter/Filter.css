@@ -2,6 +2,10 @@
     font-family: "FiraGoRegular";
     src: url(../../../public/Fonts/FiraGO-Regular.woff);
 }
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../public/Fonts/FiraGO-Bold.woff);
+}
 
 
 
@@ -18,7 +22,7 @@
 
 .filterButton{
     border: none;
-    font-family: "FiraGoRegular";
+    font-family: "FiraGoBold";
     background-color: white;
     font-size: 16px;
     font-weight: 500px;

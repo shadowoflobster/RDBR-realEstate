@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../../public/Fonts/FiraGO-Bold.woff);
+}
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../../public/Fonts/FiraGO-Regular.woff);
+}
+.areaFilterDiv{
+    width: 382px;
+    height: 372px;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-color: #ffff;
+}
+
+.areaFilterContentDiv{
+    width: 334px;
+    height: 324px;
+}
+
+.areaFilterHeader{
+    font-size: 16px;
+    font-weight: 500px;
+    font-family: "FiraGoBold";
+}
+.InputsDiv{
+    width: 325px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.areaInputDiv{
+    width: 155px;
+    height: 42px;
+    border: 1px solid #808A93;
+    border-radius: 6px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+}
+.areaInputError{
+    width: 155px;
+    height: 42px;
+    border: 1px solid #F93B1D;
+    border-radius: 6px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;  
+}
+.AreaInput{
+    width: 127px;
+    height: 42px;
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+    padding-left: 10px;
+    outline: none;
+}
+
+.areaFilterError {
+    font-family: "FiraGoRegular";
+    position: absolute;
+    color: #F93B1D;  
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.areaInputCurrency{
+    font-family: "FiraGoRegular";
+    font-size: 12px;
+    font-weight: 400px;
+    color: #2D3648;
+}
+.minMaxAreaDiv{
+    display: flex;
+}
+.AreaDiv{
+    width: 50%;
+    height: 150px;
+    margin-top: 24px;
+}
+.Areas{
+    margin-top: 16px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.areaComponent{
+    font-family: "FiraGoRegular";
+    font-size: 14px;
+    font-weight: 400px;
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.setAreaFilterBtnDiv{
+    margin-top: 32px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.setAreaFilterBtn{
+    width: 77px;
+    height: 33px;
+    padding: 8px 14px 8px 14px;
+    background-color: #F93B1D;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+

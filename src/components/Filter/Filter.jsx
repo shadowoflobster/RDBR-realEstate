@@ -3,6 +3,8 @@ import dropDownIcon from "../SVGs/dropDown.svg";
 import RegionFilterPopup from "../FilterPopup/RegionFilterPopup/RegionFilterPopup";
 import PriceFilterPopup from "../FilterPopup/PriceFilterPopup/PriceFilterPopup";
 import AreaFilterPopup from "../FilterPopup/AreaFilterPopup/AreaFilterPopup";
+import BedroomFilterPopup from "../FilterPopup/BedroomFilterPopup/BedroomFilterPopup";
+import ShowSelectedFilters from "../ShowSelectedFilters/ShowSelectedFilters";
 import './Filter.css';
 
 const Filter = () => {
@@ -11,7 +13,7 @@ const Filter = () => {
     region: [],
     price: { min: '', max: '' },
     area: { min: '', max: '' },
-    bedrooms: ''
+    bedrooms: []
   });
 
   const handleCheckboxSelect = (filterType, value) => {
@@ -55,6 +57,10 @@ const Filter = () => {
     ));
 
   };
+
+  const handleBedroomsChange=(value)=>{
+    console.log(`Bedrooms change - `)
+  }
 
   const applyFilter = () => {
     console.log('Applied filters: ', selectedFilters); // Debug statement
@@ -107,11 +113,21 @@ const Filter = () => {
         selectedArea={selectedFilters.area}
         applyFilters={applyFilter}
         onClose={() =>toggleFilter(null)}
-        
-        
         ></AreaFilterPopup>
         
         )}
+        {activeFilter === 'bedrooms' && (
+          <BedroomFilterPopup
+          selectedBedrooms={selectedFilters.bedrooms}
+          applyFilters={applyFilter}
+
+
+          >
+
+          </BedroomFilterPopup>
+      )
+
+        }
     </div>
   );
 };

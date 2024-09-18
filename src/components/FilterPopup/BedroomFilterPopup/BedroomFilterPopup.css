@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../../public/Fonts/FiraGO-Bold.woff);
+}
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+.bedroomsFilterPopup{
+    width: 282px;
+    height: 198px;
+    background-color: white;
+    margin-left: 517px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+
+}
+.bedroomsFilterContent{
+    margin-top: 24px;
+    width: fit-content;
+}
+.bedroomsFilterHeader{
+    font-family: 'FiraGoBold';
+    font-size: 16px;
+    font-weight: 500px;
+    color: #021526;
+}
+.bedroomFilterOptionsDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.bedroomFilterOption{
+    height: 41px;
+    width: 41px;
+    border: 1px solid #808A93;
+    border-radius: 6px;
+    color: #808A93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.bedroomFilterOptionSelected{
+    height: 41px;
+    width: 41px;
+    border: 1px solid #808A93;
+    border-radius: 6px;
+    color: #808A93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.setBedroomsFilterBtnDiv{
+    width: 234px;
+    margin-top: 32px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.setBedroomsFilterBtn{
+    width: 77px;
+    height: 33px;
+    padding: 8px 14px 8px 14px;
+    background-color: #F93B1D;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}

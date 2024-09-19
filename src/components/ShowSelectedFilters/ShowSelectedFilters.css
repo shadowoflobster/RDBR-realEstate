@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../public/Fonts/FiraGO-Bold.woff);
+}
+
+
+.ShowSelectedFiltersDiv{
+    width: fit-content;
+    height: 29px;
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    align-items: center;
+    gap: 8px;
+}
+.SelectedFilter{
+    width: fit-content;
+    height: 29px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px 6px 10px;
+    gap:4px;
+    font-family: 'FiraGoRegular';
+    font-size: 14px;
+    font-weight: 400px;
+    color: #021526CC;
+}
+
+.clearBtn{
+    font-family: 'FiraGoBold';
+    font-size: 14px;
+    font-weight: 500px;
+    color: #021526;
+    margin-left:8px ;
+    cursor: pointer;
+}
+.removeFilterBtn{
+    cursor: pointer;
+}

@@ -5,15 +5,15 @@ import PriceFilterPopup from "../FilterPopup/PriceFilterPopup/PriceFilterPopup";
 import AreaFilterPopup from "../FilterPopup/AreaFilterPopup/AreaFilterPopup";
 import BedroomFilterPopup from "../FilterPopup/BedroomFilterPopup/BedroomFilterPopup";
 import ShowSelectedFilters from "../ShowSelectedFilters/ShowSelectedFilters";
-import './Filter.css';
+import "./Filter.css";
 
 const Filter = () => {
   const [activeFilter, setActiveFilter] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState({
     region: [],
-    price: { min: '', max: '' },
-    area: { min: '', max: '' },
-    bedrooms: []
+    price: { min: "", max: "" },
+    area: { min: "", max: "" },
+    bedrooms: [],
   });
 
   const handleCheckboxSelect = (filterType, value) => {
@@ -21,14 +21,14 @@ const Filter = () => {
       const currentSelections = prevFilters[filterType] || [];
       const isSelected = currentSelections.includes(value);
       const updatedSelections = isSelected
-        ? currentSelections.filter(item => item !== value)
+        ? currentSelections.filter((item) => item !== value)
         : [...currentSelections, value];
 
       console.log(`Updated ${filterType} selections:`, updatedSelections); // Debug statement
 
       return {
         ...prevFilters,
-        [filterType]: updatedSelections
+        [filterType]: updatedSelections,
       };
     });
   };
@@ -44,26 +44,24 @@ const Filter = () => {
       },
     }));
   };
-  const handleAreaChange = (type, value)  =>{
+  const handleAreaChange = (type, value) => {
     console.log(`Area change - ${type}:`, value);
 
     setSelectedFilters((prevFilters) => ({
-    ...prevFilters,
-    area:{
-      ...prevFilters.area,
-      [type]: value,
-    },
-    }
-    ));
-
+      ...prevFilters,
+      area: {
+        ...prevFilters.area,
+        [type]: value,
+      },
+    }));
   };
 
-  const handleBedroomsChange=(value)=>{
-    console.log(`Bedrooms change - `)
-  }
+  const handleBedroomsChange = (value) => {
+    console.log(`Bedrooms change - `);
+  };
 
   const applyFilter = () => {
-    console.log('Applied filters: ', selectedFilters); // Debug statement
+    console.log("Applied filters: ", selectedFilters); // Debug statement
   };
 
   const toggleFilter = (filter) => {
@@ -75,31 +73,75 @@ const Filter = () => {
     }
   };
 
+  const removeFilter = (type, value = null) => {
+    setSelectedFilters((prevFilters) => {
+      const newFilters = { ...prevFilters };
+      if (type === "region") {
+        newFilters.region = newFilters.region.filter(
+          (region) => region !== value
+        );
+      } else if (type === "price") {
+        newFilters.price = { min: "", max: "" };
+      } else if (type === "area") {
+        newFilters.area = { min: "", max: "" };
+      }
+      return newFilters;
+    });
+  };
+
+  const clearFilters = () =>{
+    setSelectedFilters({
+      region: [],
+    price: { min: "", max: "" },
+    area: { min: "", max: "" },
+    bedrooms: [],
+    })
+  }
+
   return (
     <div>
       <div className="filterDiv">
-        <button name="region" className="filterButton" onClick={() => toggleFilter('region')}>
+        <button
+          name="region"
+          className="filterButton"
+          onClick={() => toggleFilter("region")}
+        >
           <span>რეგიონი</span> <img src={dropDownIcon} alt="Dropdown Icon" />
         </button>
-        <button name="price" className="filterButton" onClick={() => toggleFilter('price')}>
-          <span>საფასო კატეგორია</span><img src={dropDownIcon} alt="Dropdown Icon" />
+        <button
+          name="price"
+          className="filterButton"
+          onClick={() => toggleFilter("price")}
+        >
+          <span>საფასო კატეგორია</span>
+          <img src={dropDownIcon} alt="Dropdown Icon" />
         </button>
-        <button name="area" className="filterButton" onClick={() => toggleFilter('area')}>
-          <span>ფართობი</span><img src={dropDownIcon} alt="Dropdown Icon" />
+        <button
+          name="area"
+          className="filterButton"
+          onClick={() => toggleFilter("area")}
+        >
+          <span>ფართობი</span>
+          <img src={dropDownIcon} alt="Dropdown Icon" />
         </button>
-        <button name="bedrooms" className="filterButton" onClick={() => toggleFilter('bedrooms')}>
-          <span>საძინებლების რაოდენობა</span><img src={dropDownIcon} alt="Dropdown Icon" />
+        <button
+          name="bedrooms"
+          className="filterButton"
+          onClick={() => toggleFilter("bedrooms")}
+        >
+          <span>საძინებლების რაოდენობა</span>
+          <img src={dropDownIcon} alt="Dropdown Icon" />
         </button>
       </div>
 
-      {activeFilter === 'region' && (
+      {activeFilter === "region" && (
         <RegionFilterPopup
           onSelect={handleCheckboxSelect}
           selectedRegions={selectedFilters.region}
           applyFilters={applyFilter}
         />
       )}
-      {activeFilter === 'price' && (
+      {activeFilter === "price" && (
         <PriceFilterPopup
           onPriceChange={handlePriceChange}
           selectedPrice={selectedFilters.price}
@@ -107,27 +149,25 @@ const Filter = () => {
           onClose={() => toggleFilter(null)}
         />
       )}
-      {activeFilter === 'area' && (
+      {activeFilter === "area" && (
         <AreaFilterPopup
-        onAreaChange={handleAreaChange}
-        selectedArea={selectedFilters.area}
-        applyFilters={applyFilter}
-        onClose={() =>toggleFilter(null)}
+          onAreaChange={handleAreaChange}
+          selectedArea={selectedFilters.area}
+          applyFilters={applyFilter}
+          onClose={() => toggleFilter(null)}
         ></AreaFilterPopup>
-        
-        )}
-        {activeFilter === 'bedrooms' && (
-          <BedroomFilterPopup
+      )}
+      {activeFilter === "bedrooms" && (
+        <BedroomFilterPopup
           selectedBedrooms={selectedFilters.bedrooms}
           applyFilters={applyFilter}
-
-
-          >
-
-          </BedroomFilterPopup>
-      )
-
-        }
+        ></BedroomFilterPopup>
+      )}
+      <ShowSelectedFilters
+        selectedFilters={selectedFilters}
+        removeFilter={removeFilter}
+        clearFilters={clearFilters}
+      ></ShowSelectedFilters>
     </div>
   );
 };

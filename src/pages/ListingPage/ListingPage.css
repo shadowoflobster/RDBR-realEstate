@@ -10,7 +10,6 @@
 
 
 .ListingPageDiv{
-    background-color: pink;
     margin-top: 64px;
     width: 1596px;
 }
@@ -31,7 +30,6 @@
 .listingImage{
     width: 839px;
     height: 670px;
-    background-color: aqua;
 }
 
 .listDate{
@@ -85,7 +83,6 @@
     color: #808A93;
 }
 .agentInfoDiv{
- background-color: pink;
     width: 503px;
     height: 174px;
     border: 1px solid #DBDBDB;
@@ -97,7 +94,6 @@
 }
 
 .agentImg{
-    background-color: aqua;
     height: 72px;
     width: 72px;
     border-radius: 100px;
@@ -105,7 +101,6 @@
     margin-left: 20px;
 }
 .agentInfo{
-    background-color: yellowgreen;
     margin-top: 40px;
     margin-left: 14px;
     display: flex;

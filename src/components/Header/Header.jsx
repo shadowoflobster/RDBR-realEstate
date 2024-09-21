@@ -6,7 +6,7 @@ import logo from '../../Images/RDBRLogo.png';
 const Header =()=>{
     return (
         <div className="Header">
-            <Link to="/"><img className="logo" src={logo} ></img>   </Link>
+            <Link to="/"><img alt="header" className="logo" src={logo} ></img>   </Link>
             
         </div>
     )

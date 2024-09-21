@@ -8,7 +8,7 @@ import './Card.css';
 const Card = ({ cardImage, cardOffer, cardPrice, cardAddress, cardBedrooms, cardArea, cardZip }) => {
     return (
         <div className="cardDiv">
-            <img className="cardImage" src={cardImage} alt="Card image" />
+            <img className="cardImage" src={cardImage} alt="card" />
             <div className="cardDetailsDiv">
                 <div className="cardDetails">
                     <span className="cardPrice">{cardPrice} ₾</span>

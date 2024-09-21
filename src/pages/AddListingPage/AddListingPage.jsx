@@ -8,7 +8,6 @@ import CityDropDown from "../../components/CityDropDown/CityDropDown";
 import removeIcon from "../../components/SVGs/removeImage.svg";
 import addFile from "../../components/SVGs/addFile.svg";
 import AgentDropDown from "../../components/agentDropDown/agentDropDown";
-import AddAgentPopup from "../../components/AddAgentPopup/AddAgentPopup";
 
 const AddListingPage = () => {
   const navigate = useNavigate();
@@ -28,7 +27,7 @@ const AddListingPage = () => {
     is_rental: "",
     agent_id: "",
   });
-  const [errors, setErrors] = useState({});
+  const errors=({})
   const [regions, setRegions] = useState([]);
   const [cities, setCities] = useState([]);
   const [agents, setAgents] = useState([]);

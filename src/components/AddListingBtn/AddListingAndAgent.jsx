@@ -20,11 +20,11 @@ const AddListingAndAgent = () => {
     return (
         <div className="AddListingAndAgentDiv">
             <button className="AddListingButton" onClick={handleAddListing}>
-                <img src={addListingSvg} className="addListingSvg" /> 
+                <img alt="add listing" src={addListingSvg} className="addListingSvg" /> 
                 ლისტინგის დამატება
             </button>
             <button className="AddAgentButton" onClick={toggleAgentModal}>
-                <img src={addAgentSvg} className="addAgentSvg" />
+                <img alt="add agent" src={addAgentSvg} className="addAgentSvg" />
                 აგენტის დამატება
             </button>
 

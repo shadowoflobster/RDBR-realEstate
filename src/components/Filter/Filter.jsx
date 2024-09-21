@@ -24,7 +24,7 @@ const Filter = () => {
         ? currentSelections.filter((item) => item !== value)
         : [...currentSelections, value];
 
-      console.log(`Updated ${filterType} selections:`, updatedSelections); // Debug statement
+      console.log(`Updated ${filterType} selections:`, updatedSelections); 
 
       return {
         ...prevFilters,
@@ -34,7 +34,7 @@ const Filter = () => {
   };
 
   const handlePriceChange = (type, value) => {
-    console.log(`Price change - ${type}:`, value); // Debug statement
+    console.log(`Price change - ${type}:`, value); 
 
     setSelectedFilters((prevFilters) => ({
       ...prevFilters,
@@ -56,16 +56,14 @@ const Filter = () => {
     }));
   };
 
-  const handleBedroomsChange = (value) => {
-    console.log(`Bedrooms change - `);
-  };
+ 
 
   const applyFilter = () => {
-    console.log("Applied filters: ", selectedFilters); // Debug statement
+    console.log("Applied filters: ", selectedFilters); 
   };
 
   const toggleFilter = (filter) => {
-    console.log(`Toggling filter: ${filter}`); // Debug statement
+    console.log(`Toggling filter: ${filter}`);
     if (activeFilter === filter) {
       setActiveFilter(null);
     } else {

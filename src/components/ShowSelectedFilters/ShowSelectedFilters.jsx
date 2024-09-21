@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import removeIcon from "../SVGs/deleteSelectedFilterSvg.svg"
 import './ShowSelectedFilters.css'
 
@@ -10,7 +10,7 @@ const ShowSelectedFilters =({selectedFilters,removeFilter,clearFilters})=>{
         className="SelectedFilter"
         key={i}
         
-        >{region}<img
+        >{region}<img alt="remove"
         className="removeFilterBtn"
         src={removeIcon}
         onClick={()=>removeFilter('region',region)}    
@@ -21,7 +21,7 @@ const ShowSelectedFilters =({selectedFilters,removeFilter,clearFilters})=>{
         <div className="SelectedFilter">
           {selectedFilters.price.min && `${selectedFilters.price.min} ₾ - `}
           {selectedFilters.price.max && `${selectedFilters.price.max} ₾`}
-          <img
+          <img alt="removefilter"
             className="removeFilterBtn"
             src={removeIcon}
             onClick={() => removeFilter('price')}
@@ -32,7 +32,7 @@ const ShowSelectedFilters =({selectedFilters,removeFilter,clearFilters})=>{
         <div className="SelectedFilter">
           {selectedFilters.area.min && `${selectedFilters.area.min} მ - `}
           {selectedFilters.area.max && `${selectedFilters.area.max} მ`}
-          <img
+          <img alt="removefilter"
             className="removeFilterBtn"
             src={removeIcon}
             onClick={() => removeFilter('area')}
@@ -53,5 +53,3 @@ const ShowSelectedFilters =({selectedFilters,removeFilter,clearFilters})=>{
 
 export default ShowSelectedFilters
 
-{/* <div className="SelectedFilter">თბილისი<img className="removeFilterBtn" src={removeIcon}></img></div>
-            <span className="clearBtn">გასუფთავება</span> */}

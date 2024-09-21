@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./agentDropDown.css";
 import addAgentSvg from "../SVGs/addFile.svg";
 
 const AgentDropDown = ({ agents, onSelect, onAddAgent }) => {
@@ -17,7 +16,7 @@ const AgentDropDown = ({ agents, onSelect, onAddAgent }) => {
   };
 
   const handleAddAgent = () => {
-    onAddAgent(); // Trigger the function to open the modal
+    onAddAgent(); 
     setIsOpen(false);
   };
 
@@ -51,6 +50,7 @@ const AgentDropDown = ({ agents, onSelect, onAddAgent }) => {
         </div>
       )}
     </div>
+    
   );
 };
 

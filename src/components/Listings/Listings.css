@@ -2,4 +2,7 @@
     height: 100%;
     width: 1596px;
     background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

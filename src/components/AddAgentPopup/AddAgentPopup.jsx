@@ -4,7 +4,7 @@ import "./AddAgentPopup.css";
 import addFile from "../SVGs/addFile.svg";
 import removeIcon from "../SVGs/removeImage.svg";
 
-const AddAgentPopup = () => {
+const AddAgentPopup = ({onClose}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -114,7 +114,8 @@ const AddAgentPopup = () => {
           method: "POST",
           headers: {
             Authorization: `Bearer ${API_TOKEN}`,
-            
+            accept: 'application/json',
+
           },
           body: formDataToSend,
         }
@@ -294,7 +295,7 @@ const AddAgentPopup = () => {
           </div>
         </div>
         <div className="agentModalButtonsDiv">
-          <button className="modalButton cancelAgent">გაუქმება</button>
+          <button className="modalButton cancelAgent" onClick={onClose}>გაუქმება</button>
           <button className="modalButton addAgent" onClick={handleSubmit}>
             დაამატე აგენტი
           </button>

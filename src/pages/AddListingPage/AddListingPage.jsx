@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "./AddListingPage.css";
 import "../../components/AddAgentPopup/AddAgentPopup.css";
 import formCheckMark from "../../components/SVGs/formCheckMark.svg";
@@ -7,10 +8,13 @@ import CityDropDown from "../../components/CityDropDown/CityDropDown";
 import removeIcon from "../../components/SVGs/removeImage.svg";
 import addFile from "../../components/SVGs/addFile.svg";
 import AgentDropDown from "../../components/agentDropDown/agentDropDown";
+import AddAgentPopup from "../../components/AddAgentPopup/AddAgentPopup";
 
 const AddListingPage = () => {
+  const navigate = useNavigate();
   const API_TOKEN = process.env.REACT_APP_API_TOKEN;
   const [selectedOption, setSelectedOption] = useState("");
+  const [addAgent, setAddAgent] = useState(0);
   const [listingFormInfo, setListingFormInfo] = useState({
     address: "",
     image: null,
@@ -80,7 +84,9 @@ const AddListingPage = () => {
         });
     }
   }, [listingFormInfo.region_id]);
-
+  const handleAddAgent = () => {
+    setAddAgent(addAgent === 0 ? 1 : 0);
+  }
   const handleRegionSelect = (region) => {
     setListingFormInfo({ ...listingFormInfo, region_id: parseInt(region.id) });
   };
@@ -115,10 +121,9 @@ const AddListingPage = () => {
     if (file) {
       setListingFormInfo((prevState) => ({
         ...prevState,
-        image: file, // Store file in image
+        image: file, 
       }));
-      console.log(file); // Log the file to make sure it exists
-    } else {
+      console.log(file); 
       console.log("No file selected.");
     }
   };
@@ -168,66 +173,73 @@ const AddListingPage = () => {
       newErrors.agent_id = true;
     }
 
-    // setErrors(newErrors);
-    // return Object.keys(newErrors).length === 0;
+ 
     return newErrors;
   };
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validateForm();
   
-    if (Object.keys(validationErrors).length === 0) {
-      const formDataToSend = new FormData();
-  
-      formDataToSend.append("address", listingFormInfo.address);
-      formDataToSend.append("image", listingFormInfo.image);
-      formDataToSend.append("region_id", listingFormInfo.region_id);
-      formDataToSend.append("description", listingFormInfo.description);
-      formDataToSend.append("city_id", listingFormInfo.city_id);
-      formDataToSend.append("zip_code", listingFormInfo.zip_code);
-      formDataToSend.append("price", Number(listingFormInfo.price));
-      formDataToSend.append("area", Number(listingFormInfo.area));
-      formDataToSend.append("bedrooms", Number(listingFormInfo.bedrooms));
-      formDataToSend.append("is_rental", listingFormInfo.is_rental);
-      formDataToSend.append("agent_id", listingFormInfo.agent_id);
-  
-      fetch("https://api.real-estate-manager.redberryinternship.ge/api/real-estates", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
-        body: formDataToSend,
-      })
-        .then((response) => {
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          return response.json(); // Adjust based on your API's response
-        })
-        .then((data) => {
-          console.log("Success:", data);
-          // Optionally reset the form or show success message
-        })
-        .catch(async (error) => {
-          if (error.response) {
-            // Server responded with a status other than 200 range
-            const errorResponse = await error.response.json();
-            console.error("Error submitting form:", errorResponse);
-          } else {
-            // No response from the server
-            console.error("Network error:", error);
-          }
-        
-        });
-    } else {
-      setErrors(validationErrors);
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.set('region_id', listingFormInfo.region_id);
+    formData.set('price', listingFormInfo.price);
+    formData.set('zip_code', listingFormInfo.zipCode);
+    formData.set('area', listingFormInfo.area);
+    formData.set('city_id', listingFormInfo.city.id);
+    formData.set('address', listingFormInfo.address);
+    formData.set('agent_id', listingFormInfo.agent_id);
+    formData.set('bedrooms', listingFormInfo.bedrooms);
+    formData.set('is_rental', listingFormInfo.is_rental);
+    formData.set('description', listingFormInfo.description);
+    formData.set('image', listingFormInfo.image);
+
+    const API_TOKEN = "9d0e1e63-3b0d-4cdc-8709-0d5023a183cd";
+    if (!API_TOKEN) {
+        throw new Error("API token is missing.");
     }
-  };
+
+    try {
+        const response = await fetch('https://api.real-estate-manager.redberryinternship.ge/api/real-estates', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${API_TOKEN}`
+            },
+            body: formData
+        });
+
+        if (!response.ok) {
+            let errorText = 'Unexpected error during request.';
+            try {
+                const errorResponse = await response.json();
+                errorText = errorResponse.message || 'Error processing the request.';
+            } catch (jsonError) {
+                errorText = 'Unable to parse the error response.';
+            }
+            console.error('Request failed with status:', response.status, 'Message:', errorText);
+            throw new Error(errorText);
+        }
+
+        // Parse and log successful response
+        const responseData = await response.json();
+        console.log('Form submission successful:', responseData);
+        return responseData;
+
+    } catch (err) {
+        console.error('An error occurred:', err);
+        throw err;
+    }
+}
+const handleCancel = () => {
+  navigate("/"); 
+};
+
   
   return (
     <div className="AddListingPageDiv">
       <div className="AddListingPageHeader">ლისტინგის დამატება</div>
       <div className="listingFormDiv">
-        <div className="offerTypeDiv">
+        <form className="offerTypeDiv">
           <div className="addListingHeader">გარიგების ტიპი</div>
           <div className="offerTypeRadioButtons">
             <div className="radioDiv">
@@ -269,7 +281,7 @@ const AddListingPage = () => {
               </label>
             </div>
           </div>
-        </div>
+        </form>
 
         <div className="addListingLocation">
           <div className="addListingHeader">მდებარეობა</div>
@@ -317,13 +329,13 @@ const AddListingPage = () => {
               <label className="agentFormInputLabel" htmlFor="region">
                 რეგიონი
               </label>
-              <RegionDropDown regions={regions} onSelect={handleRegionSelect} />
+              <RegionDropDown name="region_id" regions={regions} onSelect={handleRegionSelect} />
             </div>
             <div className="form-group">
               <label className="agentFormInputLabel" htmlFor="city">
                 ქალაქი
               </label>
-              <CityDropDown cities={cities} onSelect={handleCitySelect} />
+              <CityDropDown name="city_id" cities={cities} onSelect={handleCitySelect} />
             </div>
           </div>
         </div>
@@ -420,6 +432,7 @@ const AddListingPage = () => {
               <input
                 className="listingImageInput"
                 type="file"
+                name="file"
                 accept="image/*"
                 onChange={handleFileChange}
                 hidden
@@ -428,7 +441,7 @@ const AddListingPage = () => {
                 <img src={addFile} alt="Add File" />
               ) : (
                 <div className="uploadedImage">
-                  <img
+                  <img  
                     src={URL.createObjectURL(listingFormInfo.image)}
                     alt="Uploaded"
                     style={{ width: "92px", height: "82px" }}
@@ -457,13 +470,13 @@ const AddListingPage = () => {
             >
               აირჩიე
             </label>
-            <AgentDropDown agents={agents} onSelect={handleAgentSelect} />
+            <AgentDropDown name="agent_id" agents={agents} onSelect={handleAgentSelect}  />
           </div>
         </div>
       </div>
       <div className="listingModalButtonsDiv">
-        <button className="modalButton cancelListing">გაუქმება</button>
-        <button className="modalButton addListing" onClick={handleSubmit}>
+        <button className="modalButton cancelListing"  onClick={handleCancel}>გაუქმება</button>
+        <button className="modalButton addListing" onClick={handleSubmit} onAddAgent={handleAddAgent}>
           დაამატე ლისტინგი
         </button>
       </div>

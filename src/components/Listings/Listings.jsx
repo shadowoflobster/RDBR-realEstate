@@ -43,13 +43,14 @@ const Listings = () => {
       {listings.length > 0 ? (
         listings.map((listing) => (
           <Card
-            key={listing.id} // Use a unique identifier instead of the index
-            cardPrice={listing.price}
-            cardAddres={listing.address}
-            cardBedrooms={listing.bedrooms}
-            cardArea={listing.area}
-            cardZip={listing.zip_code} // Adjust the property name as needed
-          />
+  key={listing.id}
+  cardImage={listing.image}  // Ensure the correct image property from the API is used
+  cardPrice={listing.price}
+  cardAddress={listing.address}
+  cardBedrooms={listing.bedrooms}
+  cardArea={listing.area}
+  cardZip={listing.zip_code}
+/>
         ))
       ) : (
         <p>No listings available.</p>

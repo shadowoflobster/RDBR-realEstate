@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../public/Fonts/FiraGO-Bold.woff);
+}
+
+
+.AddAgentModalOverlay{
+    
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(2, 21, 38, 0.34); /* Semi-transparent black background */
+        backdrop-filter: blur(4px ); /* Background blur effect */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999; /* Ensure it is above all other content */
+    
+}
+.AddAgentModalDiv{
+    width: 1009px;
+    height: 784px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.modalHeader{
+    font-family: "FiraGoBold";  
+    font-size: 32px;
+    font-weight: 500px;
+    margin-top: 87px;
+}
+.AgentFormDiv{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 61px;
+    display: flex;
+    flex-direction: column;
+    gap:28px
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.formInput{
+    width: 384px;
+    height: 42px;
+    border: 1px solid #808A93;
+    border-radius: 6px;
+    outline: none;
+}
+.agentFormInputLabel{
+    font-family: "FiraGoBold";
+    font-size: 14px;
+    font-weight: 500px;
+    color: #021526;
+}
+.validationHint{
+    font-family: "FiraGoRegular";
+    font-weight: 400px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+.formLine{
+    display: flex;
+    gap: 31px;
+}
+.agentImageUploadDiv{
+    display: flex;
+    flex-direction: column;
+    font-family: "FiraGoRegular";
+    font-weight: 400px;
+    font-size: 14px;
+    gap: 10px;
+}
+.agentImageInputForm{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #2D3648;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.agentModalButtonsDiv{
+    width: 811px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 94px;
+}
+
+.modalButton{
+    font-family: "FiraGoBold";
+    font-size: 16px;
+    height: 47px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px 14px 16px;
+}
+.cancelAgent{
+    background-color: white;
+    color: #F93B1D;
+    border: 1px solid #F93B1D;
+}
+.addAgent{
+color: white;
+background-color: #F93B1D;
+}
+.errorLabel {
+    color: #F93B1D;
+  }
+  
+  .errorInput {
+    border-color: #F93B1D; 
+  }
+  
+  .errorHint {
+    color: #F93B1D;
+  }
+  .uploadedImage {
+    position: relative;
+    display: inline-block; 
+  }
+  .removeImageIcon {
+    position: absolute;
+    top: 63px;
+    left: 76px; 
+    cursor: pointer; 
+  }
+
+  

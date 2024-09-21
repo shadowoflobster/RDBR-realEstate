@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+@font-face {
+    font-family: "FiraGoBold";
+    src: url(../../../public/Fonts/FiraGO-Bold.woff);
+}
+
+
+
+.ListingPageDiv{
+    background-color: pink;
+    margin-top: 64px;
+    width: 1596px;
+}
+
+
+.listingDiv{
+    width: 1591px;
+    
+    background-color: white;
+    display: flex;
+    gap: 68px;
+
+}
+.ImgAndDate{
+    display: flex;
+    flex-direction: column;
+}
+.listingImage{
+    width: 839px;
+    height: 670px;
+    background-color: aqua;
+}
+
+.listDate{
+    margin-left: auto;
+    font-family: 'FiraGoRegular';
+    font-size: 16;
+    font-weight: 400px;
+    color: #808A93;
+}
+
+
+
+.listingInfoDiv{
+    width: 503px;
+    padding-top:30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listingInfos{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;    
+    margin-top: 24px;
+
+  }
+
+.listingInfo{
+    display: flex;
+    gap: 4px;
+    font-family: "FiraGoRegular";
+    font-size: 24px;
+    color: #808A93;
+}
+  
+.listingPrice {
+    font-family: "FiragoBold";
+    font-size: 48px;
+}
+.sup {
+    font-size: 10px;
+    vertical-align: super;
+}
+
+.listingDescription{
+    width: fill;
+    font-family: "FiraGoRegular";
+    font-size: 16px;
+    font-weight: 400px;
+    margin-top: 40px;
+    color: #808A93;
+}
+.agentInfoDiv{
+ background-color: pink;
+    width: 503px;
+    height: 174px;
+    border: 1px solid #DBDBDB;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+.agent{
+    display: flex;
+}
+
+.agentImg{
+    background-color: aqua;
+    height: 72px;
+    width: 72px;
+    border-radius: 100px;
+    margin-top: 24px;
+    margin-left: 20px;
+}
+.agentInfo{
+    background-color: yellowgreen;
+    margin-top: 40px;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    font-family: "FiraGoRegular";
+
+}
+.agentName{
+font-size: 16px;
+font-weight: 400px;
+color: #021526;
+}
+.agentStatus{
+font-size: 14px;
+color: #676E76;
+}
+.agentContacts{
+    background-color: aqua;
+    margin-top: 16px;
+    margin-left: 20px;
+}
+
+.agentEmailDiv, .agentNumberDiv{
+    display: flex;
+    align-items: center;
+    gap:5px;    
+    font-family: "FiraGoRegular";
+    color: #808A93;
+    font-size: 14px;
+}
+.deleteListingBtn{
+    width: 131px;
+    height: 34px;
+    background-color: white;
+    border: 1px solid #676E76;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-family: "FiraGoRegular";
+    color: #676E76;
+    font-size: 12px;
+    font-weight: 500;
+
+}

@@ -1,0 +1,16 @@
+.carouselContainer {
+    width: 100%;
+    overflow-x: auto; /* Scroll horizontally */
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 16px; /* Space between cards */
+}
+
+.cardDiv {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust card width */
+}

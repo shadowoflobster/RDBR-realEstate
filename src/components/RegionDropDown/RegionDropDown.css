@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "FiraGoRegular";
+  src: url(../../../public/Fonts/FiraGO-Regular.woff);
+}
+
+.regionDropdown {
+  border-radius: 6px;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Allow positioning of dropdown list */
+}
+
+.dropDownLabel {
+  margin-left: 10px;
+  cursor: pointer; /* Indicate that it's clickable */
+}
+
+.regionDropdownSelected {
+  width: 389px;
+  height: 42px;
+  border: 1px solid #808A93;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  font-family: "FiraGoRegular";
+  font-size: 14px;
+}
+
+.dropDownList {
+  background-color: #ffff;
+  border-radius: 0 0 6px 6px; /* Round bottom corners */
+  display: flex;
+
+  flex-direction: column;
+  position: absolute; /* Position the dropdown correctly */
+  z-index: 1000; /* Ensure dropdown is above other elements */
+  
+}
+
+.dropDownItem {
+  width: 389px;
+  height: 42px;
+  border: 1px solid #808A93;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  cursor: pointer; /* Indicate that it's clickable */
+  font-family: "FiraGoRegular";
+  font-size: 14px;
+  background-color: #ffff;
+
+}
+.dropDownItemSpan{
+  width: fit-content;
+  margin-left: 10px;
+}
+
+/* Add classes for first and last items */
+.dropDownItem:first-child {
+  width: 384px;
+
+  border-radius: 6px 6px 0 0; /* Round top corners */
+}
+
+.dropDownItem:last-child {
+  border-radius: 0 0 6px 6px; /* Round bottom corners */
+}
+
+.dropDownItem:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}

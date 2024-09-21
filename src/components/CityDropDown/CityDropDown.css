@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "FiraGoRegular";
+    src: url(../../../public/Fonts/FiraGO-Regular.woff);
+  }
+  
+  .cityDropdown {
+    border-radius: 6px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+  }
+  
+  .dropDownLabel {
+    margin-left: 10px;
+    cursor: pointer; 
+    width: 100%;
+  }
+  
+  .cityDropdownSelected {
+    width: 389px;
+    height: 42px;
+    border: 1px solid #808A93;
+    border-radius: 6px;
+    outline: none;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    font-family: "FiraGoRegular";
+    font-size: 14px;
+  }
+  
+  .dropDownList {
+    width: 389px;
+    background-color: #ffff;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    position: absolute; 
+    z-index: 1000;
+  }
+  
+  .dropDownItem {
+    width: 389px;
+    height: 42px;
+    border: 1px solid #808A93;
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+    font-family: "FiraGoRegular";
+    font-size: 14px;
+  }
+
+  .dropDownItemSpan{
+    margin-left: 10px;
+  }
+  
+  .dropDownItem:first-child {
+    border-radius: 6px 6px 0 0; 
+  }
+  
+  .dropDownItem:last-child {
+    border-radius: 0 0 6px 6px; 
+  }
+  
+  .dropDownItem:hover {
+    background-color: #f0f0f0; 
+  }
+  

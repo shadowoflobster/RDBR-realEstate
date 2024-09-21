@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/RDBR-realEstate/static/css/main.ff92fd02.css",
+    "main.js": "/RDBR-realEstate/static/js/main.7a75c3b9.js",
+    "static/js/453.1316f956.chunk.js": "/RDBR-realEstate/static/js/453.1316f956.chunk.js",
+    "static/media/FiraGO-Bold.woff": "/RDBR-realEstate/static/media/FiraGO-Bold.4eef7d96f7d6ac00bc86.woff",
+    "static/media/FiraGO-Regular.woff": "/RDBR-realEstate/static/media/FiraGO-Regular.d4fb4c8a0328371ec572.woff",
+    "static/media/bedRoomsSvg.svg": "/RDBR-realEstate/static/media/bedRoomsSvg.66ac099a04492b66e770deb1d5a88a52.svg",
+    "static/media/removeImage.svg": "/RDBR-realEstate/static/media/removeImage.b3db32e4fbbb662f15f51a1c5255a485.svg",
+    "static/media/addAgentSvg.svg": "/RDBR-realEstate/static/media/addAgentSvg.1cf6012414465db6584112c6fff82871.svg",
+    "static/media/addListingSvg.svg": "/RDBR-realEstate/static/media/addListingSvg.0873d59e362f231add9c54a07c0ec53f.svg",
+    "static/media/zipIcon.svg": "/RDBR-realEstate/static/media/zipIcon.56f479dbb67dc701417dde842200f549.svg",
+    "index.html": "/RDBR-realEstate/index.html",
+    "static/media/areaIcon.svg": "/RDBR-realEstate/static/media/areaIcon.97242725a777229de79c3954ebb2b056.svg",
+    "static/media/locationIcon.svg": "/RDBR-realEstate/static/media/locationIcon.0e27bfb05963120da5101276bdcdc1ab.svg",
+    "static/media/addFile.svg": "/RDBR-realEstate/static/media/addFile.9d9cf22cba273e89d5ada4c85e180a8f.svg",
+    "static/media/dropDown.svg": "/RDBR-realEstate/static/media/dropDown.a7a68463dfbc77728bc16890c38674ad.svg",
+    "static/media/deleteSelectedFilterSvg.svg": "/RDBR-realEstate/static/media/deleteSelectedFilterSvg.b298b491e13abc09f484ac4a8bf969fd.svg",
+    "static/media/checked.svg": "/RDBR-realEstate/static/media/checked.f090918e8ce55e6d1597.svg",
+    "static/media/formCheckMark.svg": "/RDBR-realEstate/static/media/formCheckMark.b72353d3e57d71ec12a0dbe05040fed7.svg",
+    "main.ff92fd02.css.map": "/RDBR-realEstate/static/css/main.ff92fd02.css.map",
+    "main.7a75c3b9.js.map": "/RDBR-realEstate/static/js/main.7a75c3b9.js.map",
+    "453.1316f956.chunk.js.map": "/RDBR-realEstate/static/js/453.1316f956.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff92fd02.css",
+    "static/js/main.7a75c3b9.js"
+  ]
+}
